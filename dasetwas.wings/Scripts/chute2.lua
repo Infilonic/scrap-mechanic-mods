@@ -1,8 +1,3 @@
---[[
-Made by DasEtwas
-All rights reserved
-]]--
-
 dofile("airfoil.lua")
 
 chuteAirDensity = 0.073

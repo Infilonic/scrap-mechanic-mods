@@ -1,7 +1,3 @@
--------------------------------
---Copyright (c) 2018 DasEtwas--
--------------------------------
-
 Airfoil = class()
 Airfoil.airDensity = 2.75
 Airfoil.sleepTime = 5           -- how long it takes for a wing to fall asleep

@@ -1,8 +1,3 @@
---[[
-Made by DasEtwas
-All rights reserved
-]]--
-
 dofile("airfoil.lua")
 
 sleepTime = 5
