@@ -1,4 +1,4 @@
-dofile("airfoil.lua")
+dofile("Include.lua")
 
 chuteAirDensity = 0.073
 chuteMaxAcceleration = 70 -- m/(s^2) max acceleration
@@ -7,25 +7,6 @@ movementSleep = 15 -- how many ticks it takes for previously completely still wi
 sleepVel = 0.3 -- m/s
 sleepTime = 5 -- how long it takes for a wing to fall asleep
 ]]--
-
-function sign(num)
-	if num < 0 then
-		return -1
-	elseif num > 0 then
-		return 1
-	else
-		return 0
-	end
-end
-
--- gets local pos from relative global-space pos
-function getLocal(shape, vec)
-	return sm.vec3.new(sm.shape.getRight(shape):dot(vec), sm.shape.getAt(shape):dot(vec), sm.shape.getUp(shape):dot(vec))
-end
-
-function getGlobal(shape, vec)
-	return vec.x * sm.shape.getRight(shape) + vec.y * sm.shape.getAt(shape) + vec.z * sm.shape.getUp(shape)
-end
 
 -- applies /impulse/ at arbitary /impulsePos/ to /shapes/
 -- /impulse/ and /impulsePos/ are global
