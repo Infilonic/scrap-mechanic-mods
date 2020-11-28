@@ -1,3 +1,5 @@
+dofile("Include.lua")
+
 Airfoil = class()
 Airfoil.airDensity = 2.75
 Airfoil.sleepTime = 5           -- how long it takes for a wing to fall asleep
@@ -5,16 +7,6 @@ Airfoil.maxForce = 80000        -- max force excerted by a wing in N
 Airfoil.maxJerk = 1.8           -- is multiplied with velocity
 Airfoil.maxVel = 600
 Airfoil.maxVelTimeout = 400
-
-local function sign(num)
-    if num < 0 then
-        return -1
-    elseif num > 0 then
-        return 1
-    else
-        return 0
-    end
-end
 
 function Airfoil:server_onCreate()
     self.area = self.data.area

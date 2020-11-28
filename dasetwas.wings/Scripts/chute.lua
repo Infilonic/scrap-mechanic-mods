@@ -1,29 +1,10 @@
-dofile("airfoil.lua")
+dofile("Include.lua")
 
 sleepTime = 5
 chuteAirDensity = 2.25
 chuteMaxAcc = 12 --m/s
 maxVel = 600 -- m/s
 maxAngVel = 0.7 -- rad/s
-
-function sign(num)
-    if num < 0 then
-        return -1
-    elseif num > 0 then
-        return 1
-    else
-        return 0
-    end
-end
-
--- gets local pos from relative global-space pos
-function getLocal(shape, vec)
-    return sm.vec3.new(sm.shape.getRight(shape):dot(vec), sm.shape.getAt(shape):dot(vec), sm.shape.getUp(shape):dot(vec))
-end
-
-function getGlobal(shape, vec)
-    return sm.shape.getRight(shape) * vec.x + sm.shape.getAt(shape) * vec.y + sm.shape.getUp(shape) * vec.z
-end
 
 Chute1 = class(nil)
 Chute1.active = false
